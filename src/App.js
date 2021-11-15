@@ -2,7 +2,7 @@ import React, { useState, createRef } from "react";
 import Wizard from "./components/Wizard";
 import { saveAsPng } from "./components/Canvas";
 
-const parts = ["background", ""];
+// const parts = ["background", ""];
 
 const initialState = {
   color: "",
@@ -41,7 +41,7 @@ function App() {
       <div>
         <Wizard svg={svg} color={color} />
         <div className="p-2 sm:p-12 md:px-32 bg-gray-200 uppercase">
-          <button className="" onClick={handleClick}>
+          <button className="bg-red-700 p-4" onClick={handleClick}>
             save
           </button>
           <label className="block p-4 mb-4 sm:mb-8 bg-gray-100">
