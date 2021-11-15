@@ -57,7 +57,7 @@ export const saveAsPng = (settings) => {
       // Render image in the canvas
       context.drawImage(this, 0, 0, finalWidth, finalHeight);
 
-      if (_settings.outputFormat == "blob") {
+      if (_settings.outputFormat === "blob") {
         // Fullfil and Return the Blob image
         canvas.toBlob(
           function (blob) {
