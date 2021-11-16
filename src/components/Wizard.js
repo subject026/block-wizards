@@ -1,7 +1,13 @@
 import React from "react";
 
+import Hat from "./Wizard/Hat.js";
+
+import { getHSL, shiftHue } from "../utils/index.js";
+
 const Wizard = ({ color, svg }) => {
-  console.log(color);
+  const secondaryColor = shiftHue(color, 70);
+  const nextColor = shiftHue(secondaryColor, 70);
+
   return (
     <div>
       <svg
@@ -10,14 +16,41 @@ const Wizard = ({ color, svg }) => {
         xmlns="http://www.w3.org/2000/svg"
         ref={svg}
       >
+        <defs>
+          <linearGradient id="a">
+            <stop style={{ stopColor: getHSL(secondaryColor) }} offset="0" />
+            <stop style={{ stopColor: getHSL(color) }} offset="1" />
+          </linearGradient>
+          <linearGradient
+            xlinkHref="#a"
+            id="b"
+            x1="0"
+            y1="6.085"
+            x2="6.615"
+            y2=".529"
+            gradientUnits="userSpaceOnUse"
+          />
+        </defs>
         <g>
+          <path
+            style={{
+              fill: "url(#b)",
+              fillRule: "evenodd",
+              strokeWidth: 0.264583,
+              fillOpacity: 1,
+            }}
+            d="M0 0h6.615v6.615H0z"
+          />
+        </g>
+
+        {/* <g>
           <path
             style={{
               fill: "#c8beb7",
             }}
             d="M0 0h6.615v6.615H0z"
           />
-        </g>
+        </g> */}
         <g>
           <path
             style={{ fill: "#d38d5f" }}
@@ -36,7 +69,7 @@ const Wizard = ({ color, svg }) => {
         </g>
         <g>
           <path
-            style={{ fill: color }}
+            style={{ fill: getHSL(color) }}
             d="M3.969 2.91h.794v.794h-.794zM2.381 2.91h.794v.794h-.794z"
           />
         </g>
@@ -45,6 +78,9 @@ const Wizard = ({ color, svg }) => {
           d="M7 10v1h1v3h1v-3h3v3h1v-2h1v2h1v-3h3v3h1v-4H7zm11 4h-3v1h3v-1zm-6 0H9v1h3v-1zm-5-3H6v1h1v-1z"
           transform="scale(.26458)"
         />
+
+        {/* hat */}
+        <Hat color={nextColor} />
       </svg>
     </div>
   );

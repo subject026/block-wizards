@@ -5,41 +5,53 @@ import { saveAsPng } from "./components/Canvas";
 // const parts = ["background", ""];
 
 const initialState = {
-  color: "",
-  hue: Math.floor(Math.random() * 360),
-  sat: 90,
-  light: 10,
+  color: {
+    h: Math.floor(Math.random() * 360),
+    s: 95,
+    l: 50,
+  },
 };
 
 function App() {
   const [state, setState] = useState({
     ...initialState,
-    color: `hsl(${initialState.hue}, ${initialState.sat}%, ${initialState.light}%)`,
   });
 
   const svg = createRef(null);
 
   const handleInputChange = ({ target: { value, name } }) => {
-    console.log(name, value);
-    const newState = { ...state };
-    newState[name] = value;
-    const { hue, sat, light } = newState;
-    const color = `hsl(${hue}, ${sat}%, ${light}%)`;
-    setState(() => ({ ...newState, color }));
+    let newColor = { ...state.color };
+    switch (name) {
+      case "hue":
+        newColor.h = value;
+        break;
+      case "sat":
+        newColor.s = value;
+        break;
+      case "light":
+        newColor.l = value;
+        break;
+      default:
+        console.log("whaaaaaaa");
+    }
+    console.log(newColor);
+    setState(() => ({ ...state, color: { ...newColor } }));
   };
 
   const handleClick = async () => {
-    console.log(svg.current);
     const result = await saveAsPng({ svg: svg.current });
     console.log(result);
+
+    const a = document.createElement("a"); //Create <a>
+    a.href = result; //Image Base64 Goes here
+    a.download = "Image.png"; //File name Here
+    a.click(); //Downloaded file
   };
-
-  const { hue, sat, light, color } = state;
-
+  console.log(state);
   return (
     <div className="min-h-screen bg-gray-300 p-4 sm:p-12 flex flex-col justify-center items-center">
       <div>
-        <Wizard svg={svg} color={color} />
+        <Wizard svg={svg} color={state.color} />
         <div className="p-2 sm:p-12 md:px-32 bg-gray-200 uppercase">
           <button className="bg-red-700 p-4" onClick={handleClick}>
             save
@@ -54,7 +66,7 @@ function App() {
               step="1"
               min="0"
               max="360"
-              value={hue}
+              value={state.color.h}
               onChange={handleInputChange}
             />
             <input
@@ -63,7 +75,7 @@ function App() {
               type="range"
               min="0"
               max="360"
-              value={hue}
+              value={state.color.h}
             />
           </label>
           <label className="block p-2 mb-4 bg-gray-100">
@@ -75,7 +87,7 @@ function App() {
               step="1"
               min="0"
               max="100"
-              value={sat}
+              value={state.color.s}
               onChange={handleInputChange}
             />
             <input
@@ -84,7 +96,7 @@ function App() {
               type="range"
               min="0"
               max="100"
-              value={sat}
+              value={state.color.s}
             />
           </label>
           <label className="block p-4 bg-gray-100">
@@ -96,7 +108,7 @@ function App() {
               step="1"
               min="0"
               max="100"
-              value={light}
+              value={state.color.l}
               onChange={handleInputChange}
             />
             <input
@@ -105,7 +117,7 @@ function App() {
               type="range"
               min="0"
               max="100"
-              value={light}
+              value={state.color.l}
             />
           </label>
         </div>

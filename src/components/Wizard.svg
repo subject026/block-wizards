@@ -1,0 +1,33 @@
+<svg width="25" height="25" viewBox="0 0 6.615 6.615" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="a">
+      <stop style="stop-color:#3c4069;stop-opacity:1" offset="0"/>
+      <stop style="stop-color:#0da1aa;stop-opacity:1" offset=".5"/>
+      <stop style="stop-color:#95f0a4;stop-opacity:1" offset="1"/>
+    </linearGradient>
+    <linearGradient xlink:href="#a" id="b" x1="0" y1="6.085" x2="6.615" y2=".529" gradientUnits="userSpaceOnUse"/>
+  </defs>
+  <g style="display:inline">
+    <path style="fill:url(#b);fill-rule:evenodd;stroke-width:.264583;fill-opacity:1" d="M0 0h6.615v6.615H0z"/>
+  </g>
+  <g style="display:inline">
+    <path style="fill:#d38d5f;stroke-width:.264583" d="M2.117 2.117v.264h-.265v.794h-.265v.53h.265v2.91h1.323v-.53h1.058v-.264h.265v-.265h.264V2.381h-.264v-.264h-.265Z"/>
+  </g>
+  <g style="display:inline">
+    <path style="fill:#000;stroke-width:.999999" d="M9 7v1h7V7Zm7 1v1h1V8Zm1 1v12h1V9Zm0 12h-1v1h1zm-1 1h-5v3h1v-2h4zM9 8H8v1h1ZM8 9H7v3h1Zm-1 3H6v2h1zm0 2v11h1V14Z" transform="scale(.26458)"/>
+  </g>
+  <g style="display:inline">
+    <path style="fill:#000;fill-opacity:1;stroke-width:.264583" d="M3.175 5.027h.794v.265h-.794z"/>
+  </g>
+  <g style="display:inline">
+    <path style="fill:#483737;stroke-width:.264583" d="M3.969 3.175h.529v.529h-.529zM2.646 3.175h.529v.529h-.529z"/>
+    <path style="fill:#502d16;stroke-width:.264583" d="M3.969 3.175h.529v.265h-.529z"/>
+    <path style="fill:#502d16;fill-opacity:1;stroke-width:.264583" d="M2.646 3.175h.529v.265h-.529z"/>
+    <path style="fill:#784421;stroke-width:.264583" d="M4.233 3.44h.265v.265h-.265zM2.91 3.44h.265v.265H2.91z"/>
+    <path style="fill:#241c1c;fill-opacity:1;stroke-width:.264583" d="M2.646 3.44h.265v.265h-.265zM3.969 3.44h.265v.265h-.265z"/>
+    <path style="fill:#d38d5f;fill-opacity:1;stroke-width:.264583" d="M2.91 3.44h.265v.265H2.91zM4.233 3.44h.265v.265h-.265z"/>
+    <path style="fill:#000;fill-opacity:1;stroke-width:.264583" d="M2.646 3.44h.265v.265h-.265zM3.969 3.44h.265v.265h-.265z"/>
+  </g>
+  
+  
+</svg>
